@@ -13,3 +13,5 @@ USER airflow
 
 COPY requirements.txt .
 RUN uv pip install -r requirements.txt
+
+COPY nwt_dbt .

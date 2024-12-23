@@ -1,4 +1,4 @@
-test:
+nwt_dbt:
   outputs:
     dev:
       dbname: dbt
