@@ -30,6 +30,11 @@ DAGs are defined in the airflow/dags folder and the dbt models are defined in th
 
 Also, have in mind that the data must be downloaded into a folder called bucket in the root of this repo as the connector to S3 is not ready yet.
 
+Data lineage
+
+![image](https://github.com/user-attachments/assets/0716c34a-7eb5-4482-9bfb-1450ea9f4b76)
+
+
 ## Future approach
 
 This repo is nothing more than a proof of concept to illustrate how a solid, resilient and reliable data platform could work for this kind of 
