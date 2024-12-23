@@ -61,7 +61,7 @@ with DAG(
     "raw_media_loader",
     default_args=default_args,
     schedule_interval="*/30 * * * *",
-    catchup=False,
+    catchup=True,
 ) as dag:
     load_raw_media_data = PythonOperator(
         task_id="load_raw_media_data",
