@@ -54,6 +54,7 @@ Here is a short list of improvements to make for this project.
 - Manage infra with terraform
 - Download data from S3 instead of reading it locally
 - Document DBT models and Airflow DAGs
+- CI/CD pipelines in GitHub Actions
 - Create dependencies between DAG
 - Schedule dbt DAG
 
