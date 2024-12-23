@@ -1,3 +1,8 @@
+{{ config(
+    materialized='incremental',
+    unique_key='id'
+) }}
+
 with raw as (
     select
         id,
@@ -31,4 +36,8 @@ select
     source_title,
     link
 from raw
+
+{% if is_incremental() %}
+where date > (select max(date) from {{ this }})
+{% endif %}
 
