@@ -15,8 +15,12 @@ default_args = {
 
 
 def load_data():
-    engine = create_engine("postgresql+psycopg2://dbt:dbt@localhost:5433/dbt")
-    folder_path = "bucket/Media/2024/08/01/"
+    """
+    Loads the JSON file into a normalize pandas dataframe and dump the content
+    into the raw_media table in postgresql.
+    """
+    engine = create_engine("postgresql+psycopg2://dbt:dbt@postgres-dbt:5432/dbt")
+    folder_path = "/opt/airflow/data/Media/2024/08/01/"
 
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
@@ -44,8 +48,8 @@ with DAG(
     catchup=False,
 ) as dag:
     load_raw_media_data = PythonOperator(
-        task_id="load_raw_media_data",  # Task ID
-        python_callable=load_data_to_postgres,  # Function to call
+        task_id="load_raw_media_data",
+        python_callable=load_data,
         dag=dag,
     )
 
