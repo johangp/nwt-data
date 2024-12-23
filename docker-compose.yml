@@ -20,11 +20,11 @@ x-airflow-common:
     - ./airflow/plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
   depends_on:
-    postgres-airflow:
+    postgres:
       condition: service_healthy
 
 services:
-  postgres-airflow:
+  postgres:
     image: postgres:13
     environment:
       POSTGRES_USER: airflow
