@@ -10,12 +10,6 @@ CREATE TYPE feed AS (
     name VARCHAR
 );
 
-DROP TYPE IF EXISTS source;
-CREATE TYPE source AS (
-    title VARCHAR
-);
-
-
 DROP TABLE IF EXISTS raw_media;
 CREATE TABLE raw_media (
     id VARCHAR,
@@ -28,6 +22,6 @@ CREATE TABLE raw_media (
     title TEXT,
     summary TEXT,
     text TEXT,
-    source source,
+    source TEXT,
     link TEXT
 );
