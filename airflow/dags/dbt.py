@@ -11,18 +11,16 @@ default_args = {
 DBT_DIR = "/opt/airflow/"
 
 with DAG(
-    "dbt_bashoperator_example",
+    "dbt_manually_execution",
     default_args=default_args,
     schedule_interval=None,
     catchup=False,
 ) as dag:
-    # Define dbt run command
     dbt_debug = BashOperator(
         task_id="dbt_debug",
         bash_command=f"cd {DBT_DIR} && dbt debug",
     )
 
-    # Define dbt run command
     dbt_run = BashOperator(
         task_id="dbt_run",
         bash_command=f"cd {DBT_DIR} && dbt run",
