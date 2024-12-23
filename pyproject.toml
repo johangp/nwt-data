@@ -8,6 +8,6 @@ dependencies = [
     "apache-airflow>=2.10.4",
     "dbt-core>=1.9.1",
     "dbt-postgres>=1.9.0",
-    "pandas==2.0",
+    "pandas==2.1.4",
     "sqlalchemy>=1.4.54",
 ]
