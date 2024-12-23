@@ -48,6 +48,7 @@ Here is a short list of improvements to make for this project.
 - Create tests for the DBT models and for the Python logic
 - Manage infra with terraform
 - Download data from S3 instead of reading it locally
+- Document DBT models and Airflow DAGs
 - Create dependencies between DAG
 - Schedule dbt DAG
 
