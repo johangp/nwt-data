@@ -31,9 +31,10 @@ def load_data(**kwargs):
     """
     execution_date = kwargs["execution_date"]
     timestamp = get_execution_timestamp(execution_date)
+    formatted_date = execution_date.strftime("%Y/%m/%d")
+    folder_path = f"/opt/airflow/data/Media/{formatted_date}"
 
     engine = create_engine("postgresql+psycopg2://dbt:dbt@postgres-dbt:5432/dbt")
-    folder_path = "/opt/airflow/data/Media/2024/08/01/"
 
     for filename in os.listdir(folder_path):
         # Process the corresponding JSON file aligned with the execution time.
