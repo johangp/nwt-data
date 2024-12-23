@@ -1,0 +1,12 @@
+test:
+  outputs:
+    dev:
+      dbname: dbt
+      host: postgres-dbt
+      pass: dbt
+      port: 5433
+      schema: dbt
+      threads: 1
+      type: postgres
+      user: dbt
+  target: dev
