@@ -8,6 +8,8 @@ Once the data is loaded into a database it can be transformed using DBT creating
 The current architecture is composed of an Airflow instance to orchestrate the workflows and a DBT project to run the
 SQL models into the DwH. For the sake of reproducibility, I've used PostgreSQL instead of a real DWH.
 
+In the DDL folder, you'll find the SQL files to manage the raw data tables. 
+
 After you clone this project, you can reproduce it by running docker compose up (be sure you have it previously installed).
 You'll have an Airflow server running on your localhost:8080. Have in mind that it will ask for the credentials, in this case
 is airflow for the user and password.
@@ -35,6 +37,18 @@ ingestion. The pipelines are idempotent and an ELT approach was decided to take 
 
 Here I illustrate the architecture that I'll create for this project
 
+![image](https://github.com/user-attachments/assets/7a849216-b338-4cff-a296-83a217ef4e06)
 
+## Technical debt
+
+Here is a short list of improvements to make for this project.
+
+- Create a specific project to manage airflow and others to manage dbt models
+- Ideally, Python DAG would run in a docker operator to isolate dependencies from the Airflow server
+- Create tests for the DBT models and for the Python logic
+- Manage infra with terraform
+- Download data from S3 instead of reading it locally
+- Create dependencies between DAG
+- Schedule dbt DAG
 
 
